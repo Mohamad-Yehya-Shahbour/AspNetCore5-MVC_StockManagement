@@ -52,5 +52,10 @@ namespace StockManagement.Data
         {
             return _context.Stores.ToList();
         }
+
+        public List<Store> GetByBrancheId(int BrancheId)
+        {
+            return _context.Stores.Where(x => x.BrancheId == BrancheId).ToList();
+        }
     }
 }
