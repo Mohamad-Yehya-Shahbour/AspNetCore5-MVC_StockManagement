@@ -14,5 +14,11 @@ namespace StockManagement.Data
             _context = context;
         }
 
+        public Branche Add(Branche Branche)
+        {
+            _context.Branches.Add(Branche);
+            _context.SaveChanges();
+            return Branche;
+        }
     }
 }
