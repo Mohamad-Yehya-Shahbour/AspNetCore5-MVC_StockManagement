@@ -43,5 +43,14 @@ namespace StockManagement.Data
             }
         }
 
+        public Branche GetById(int BrancheId)
+        {
+            return _context.Branches.FirstOrDefault(x => x.Id == BrancheId);
+        }
+
+        public List<Branche> Get()
+        {
+            return _context.Branches.ToList();
+        }
     }
 }
