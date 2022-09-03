@@ -33,5 +33,15 @@ namespace StockManagement.Data
             return Branche;
         }
 
+        public void Delete(int BrancheId)
+        {
+            Branche branche = GetById(BrancheId);
+            if (branche != null)
+            {
+                _context.Branches.Remove(branche);
+                _context.SaveChanges();
+            }
+        }
+
     }
 }
