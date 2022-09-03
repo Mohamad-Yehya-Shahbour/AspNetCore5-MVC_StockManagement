@@ -20,6 +20,7 @@ namespace StockManagement.Data
             _context.SaveChanges();
             return Store;
         }
+
         public Store Update(Store Store)
         {
             Store storedb = GetById(Store.Id);
@@ -30,6 +31,16 @@ namespace StockManagement.Data
                 _context.SaveChanges();
             }
             return Store;
+        }
+
+        public void Delete(int StoreId)
+        {
+            Store store = GetById(StoreId);
+            if (store != null)
+            {
+                _context.Stores.Remove(store);
+                _context.SaveChanges();
+            }
         }
 
     }
