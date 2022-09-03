@@ -43,5 +43,14 @@ namespace StockManagement.Data
             }
         }
 
+        public Store GetById(int StoreId)
+        {
+            return _context.Stores.FirstOrDefault(x => x.Id == StoreId);
+        }
+
+        public List<Store> Get()
+        {
+            return _context.Stores.ToList();
+        }
     }
 }
