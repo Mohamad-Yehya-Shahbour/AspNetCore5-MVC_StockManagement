@@ -20,5 +20,18 @@ namespace StockManagement.Data
             _context.SaveChanges();
             return Branche;
         }
+
+        public Branche Update(Branche Branche)
+        {
+            Branche branchedb = GetById(Branche.Id);
+            if (branchedb != null)
+            {
+                branchedb.Name = Branche.Name;
+                branchedb.ManagerName = Branche.ManagerName;
+                _context.SaveChanges();
+            }
+            return Branche;
+        }
+
     }
 }
