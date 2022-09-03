@@ -20,5 +20,17 @@ namespace StockManagement.Data
             _context.SaveChanges();
             return Store;
         }
+        public Store Update(Store Store)
+        {
+            Store storedb = GetById(Store.Id);
+            if (storedb != null)
+            {
+                storedb.Name = Store.Name;
+                storedb.BrancheId = Store.BrancheId;
+                _context.SaveChanges();
+            }
+            return Store;
+        }
+
     }
 }
