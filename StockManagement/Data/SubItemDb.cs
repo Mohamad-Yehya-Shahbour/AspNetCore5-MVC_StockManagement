@@ -20,5 +20,20 @@ namespace StockManagement.Data
             _context.SaveChanges();
             return SubItem;
         }
+
+        public SubItem Update(SubItem SubItem)
+        {
+            SubItem subItemdb = GetById(SubItem.Id);
+            if (subItemdb != null)
+            {
+                subItemdb.Name = SubItem.Name;
+                subItemdb.ImageUrl = SubItem.ImageUrl;
+                subItemdb.ItemId = SubItem.ItemId;
+
+                _context.SaveChanges();
+            }
+            return SubItem;
+        }
+
     }
 }
