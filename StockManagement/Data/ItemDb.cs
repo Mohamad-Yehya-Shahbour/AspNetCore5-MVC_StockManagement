@@ -43,5 +43,14 @@ namespace StockManagement.Data
             }
         }
 
+        public Item GetById(int ItemId)
+        {
+            return _context.Items.FirstOrDefault(x => x.Id == ItemId);
+        }
+
+        public List<Item> Get()
+        {
+            return _context.Items.ToList();
+        }
     }
 }
