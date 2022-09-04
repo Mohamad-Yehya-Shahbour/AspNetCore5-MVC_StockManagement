@@ -52,5 +52,10 @@ namespace StockManagement.Data
         {
             return _context.Items.ToList();
         }
+
+        public List<Item> GetByCategoryId(int CategoryId)
+        {
+            return _context.Items.Where(x => x.CayegoryId == CategoryId).ToList();
+        }
     }
 }
