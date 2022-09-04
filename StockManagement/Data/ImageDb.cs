@@ -18,5 +18,13 @@ namespace StockManagement.Data
         {
             return _context.Images.Where(x => x.ItemId == ItemId).ToList();
         }
+
+        public Image Add(Image image)
+        {
+            _context.Images.Add(image);
+            _context.SaveChanges();
+            return image;
+        }
+
     }
 }
