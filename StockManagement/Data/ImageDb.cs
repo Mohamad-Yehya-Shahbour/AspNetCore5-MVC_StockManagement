@@ -14,5 +14,9 @@ namespace StockManagement.Data
             _context = context;
         }
 
+        public List<Image> GetByItemId(int ItemId)
+        {
+            return _context.Images.Where(x => x.ItemId == ItemId).ToList();
+        }
     }
 }
