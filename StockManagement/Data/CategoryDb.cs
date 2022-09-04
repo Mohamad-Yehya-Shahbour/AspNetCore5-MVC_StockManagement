@@ -46,5 +46,10 @@ namespace StockManagement.Data
         {
             return _context.Categories.FirstOrDefault(x => x.Id == CategoryId);
         }
+
+        public List<Category> Get()
+        {
+            return _context.Categories.ToList();
+        }
     }
 }
