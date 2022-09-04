@@ -32,5 +32,16 @@ namespace StockManagement.Data
             }
             return Item;
         }
+
+        public void Delete(int ItemId)
+        {
+            Item item = GetById(ItemId);
+            if (item != null)
+            {
+                _context.Items.Remove(item);
+                _context.SaveChanges();
+            }
+        }
+
     }
 }
