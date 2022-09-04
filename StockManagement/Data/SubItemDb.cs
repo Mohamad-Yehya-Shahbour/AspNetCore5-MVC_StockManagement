@@ -14,5 +14,11 @@ namespace StockManagement.Data
             _context = context;
         }
 
+        public SubItem Add(SubItem SubItem)
+        {
+            _context.SubItems.Add(SubItem);
+            _context.SaveChanges();
+            return SubItem;
+        }
     }
 }
