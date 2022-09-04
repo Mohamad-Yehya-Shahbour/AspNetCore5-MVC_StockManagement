@@ -1,4 +1,4 @@
-using StockManagement.Models;
+﻿using StockManagement.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -53,6 +53,11 @@ namespace StockManagement.Data
         public List<SubItem> Get()
         {
             return _context.SubItems.ToList();
+        }
+
+        public List<SubItem> GetByItemId(int ItemId)
+        {
+            return _context.SubItems.Where(x => x.ItemId == ItemId).ToList();
         }
     }
 }
