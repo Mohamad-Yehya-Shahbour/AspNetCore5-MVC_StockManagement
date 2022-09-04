@@ -21,5 +21,16 @@ namespace StockManagement.Data
             return Item;
         }
 
+        public Item Update(Item Item)
+        {
+            Item itemdb = GetById(Item.Id);
+            if (itemdb != null)
+            {
+                itemdb.Name = Item.Name;
+                itemdb.CayegoryId = Item.CayegoryId;
+                _context.SaveChanges();
+            }
+            return Item;
+        }
     }
 }
