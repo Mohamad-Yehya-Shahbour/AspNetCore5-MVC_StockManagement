@@ -20,5 +20,16 @@ namespace StockManagement.Data
             _context.SaveChanges();
             return Category;
         }
+
+        public Category Update(Category Category)
+        {
+            Category categorydb = GetById(Category.Id);
+            if (categorydb != null)
+            {
+                categorydb.Name = Category.Name;
+                _context.SaveChanges();
+            }
+            return Category;
+        }
     }
 }
