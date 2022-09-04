@@ -44,5 +44,15 @@ namespace StockManagement.Data
                 _context.SaveChanges();
             }
         }
+
+        public SubItem GetById(int SubItemId)
+        {
+            return _context.SubItems.FirstOrDefault(x => x.Id == SubItemId);
+        }
+
+        public List<SubItem> Get()
+        {
+            return _context.SubItems.ToList();
+        }
     }
 }
