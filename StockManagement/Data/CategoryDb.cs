@@ -41,5 +41,10 @@ namespace StockManagement.Data
                 _context.SaveChanges();
             }
         }
+
+        public Category GetById(int CategoryId)
+        {
+            return _context.Categories.FirstOrDefault(x => x.Id == CategoryId);
+        }
     }
 }
