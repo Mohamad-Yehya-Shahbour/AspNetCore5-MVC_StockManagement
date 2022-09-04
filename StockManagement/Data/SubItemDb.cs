@@ -35,5 +35,14 @@ namespace StockManagement.Data
             return SubItem;
         }
 
+        public void Delete(int SubItemId)
+        {
+            SubItem subItem = GetById(SubItemId);
+            if (subItem != null)
+            {
+                _context.SubItems.Remove(subItem);
+                _context.SaveChanges();
+            }
+        }
     }
 }
